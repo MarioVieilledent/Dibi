@@ -1,0 +1,5 @@
+package httpService
+
+var Url string = "127.0.0.1"
+var ApplicationPort string = "3000"
+var APIPort string = "3001"

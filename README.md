@@ -1,6 +1,8 @@
 # Dibi
 
-![GitHub top language](https://img.shields.io/github/languages/top/MarioVieilledent/CheatSheetGo)
+![GitHub top language](https://img.shields.io/github/languages/top/MarioVieilledent/Dibi)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/MarioVieilledent/Dibi)
+![GitHub repo size](https://img.shields.io/github/repo-size/MarioVieilledent/Dibi)
 
 A simple CLI app for multiple usage about Dibi language.
 

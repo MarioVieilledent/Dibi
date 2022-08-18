@@ -1,4 +1,4 @@
-package dictionary
+package dict
 
 type DibiWord struct {
 	Id           string `json:"_id"`
