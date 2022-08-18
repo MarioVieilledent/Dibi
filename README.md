@@ -14,6 +14,8 @@ This app needs to be be compiled with Go. [Download Go](https://go.dev/dl/).
 
 ## Features
 
+Provides an algorithm to sort the dictionary and return most relevant results based on a string query.
+
 ### API
 An API is served by default on `127.0.0.1:3001`
 
