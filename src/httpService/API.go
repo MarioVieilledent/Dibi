@@ -33,5 +33,5 @@ func getDictionary(c *gin.Context) {
 // Words corresponding to a query
 func getListByQuery(c *gin.Context) {
 	query := c.Param("query")
-	c.IndentedJSON(http.StatusOK, dict.GetMatchingList(query))
+	c.IndentedJSON(http.StatusOK, dict.GetMatchingList(query, 50))
 }

@@ -1,16 +1,26 @@
 package dict
 
 import (
+	"math"
 	"sort"
 	"strings"
 )
 
-func GetMatchingList(query string) []DibiWord {
+const defaultListSize int = 50
+
+func GetMatchingList(query string, listSize int) []DibiWord {
+
 	sort.Slice(Dictionary, func(a, b int) bool {
 		return Dictionary[a].calculateScore(query) > Dictionary[b].calculateScore(query)
 	})
 
-	return Dictionary[0:20]
+	if listSize >= len(Dictionary) {
+		return Dictionary
+	} else if listSize < 0 {
+		return Dictionary[0:defaultListSize]
+	} else {
+		return Dictionary[0:listSize]
+	}
 }
 
 func (dw DibiWord) calculateScore(query string) float64 {
@@ -28,6 +38,7 @@ func (dw DibiWord) calculateScore(query string) float64 {
 }
 
 func stringsScore(a string, b string) (score float64) {
+	score = 0.0
 	a = strings.ToLower(a)
 	b = strings.ToLower(b)
 	if a == b {
@@ -38,7 +49,7 @@ func stringsScore(a string, b string) (score float64) {
 				for k := 0; k < len(b)+1; k++ {
 					for l := k + 2; l < len(b)+1; l++ {
 						if a[i:j] == b[k:l] {
-							score += 0.001 * float64(len(a[i:j])) * float64(len(a[i:j]))
+							score += 0.001 * math.Pow(float64(len(a[i:j])), 3)
 						}
 					}
 				}
