@@ -24,7 +24,7 @@ function query(query) {
     if (query.length > 10) {
         l.innerHTML = `<div class="word"><span>Trop de caractères dans la recherche</span></div>`
     } else if (query.length > 1) {
-        fetch(`${window.location.protocol}//` + location.hostname + ':3000/api/' + encodeURIComponent(query))
+        fetch(`${window.location.protocol}//` + location.hostname + '/api/' + encodeURIComponent(query))
             .then((res) => res.json())
             .then((data) => {
                 l.innerHTML = '';
