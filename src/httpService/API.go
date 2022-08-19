@@ -25,7 +25,7 @@ func LaunchAPI() {
 	router.GET("/api", getDictionary)
 	router.GET("/api/:query", getListByQuery)
 
-	router.Run(Url + ":" + port)
+	router.Run(Url + ":" + APIPort)
 }
 
 // All words

@@ -16,12 +16,21 @@ body {
 }
 
 .body {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 12px;
+    align-items: center;
     background-color: #333;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
 }
 
 #input {
@@ -52,9 +61,13 @@ body {
 .word {
     display: flex;
     flex-direction: column;
-    padding: 1px 0px 1px 6px;
+    padding: 2px 0px 2px 6px;
     margin: 3px 0px;
     background-color: #444;
+}
+
+.word > span {
+    color: white;
 }
 
 .word > .dibi {
@@ -77,26 +90,30 @@ body {
     font-size: 15px;
     font-weight: 300;
     color: #fff;
+    margin-top: 2px;
 }
 
 .word > .english > span {
     font-size: 15px;
     font-weight: 300;
     color: #fff;
+    margin-top: 2px;
 }
 
 .word > .description > span {
     font-size: 13px;
-    color: #bbb;
+    color: #ccc;
     font-weight: 300;
     font-style: italic;
+    margin-top: 2px;
 }
 
 .word > .author > span {
     font-size: 13px;
-    color: #bbb;
+    color: #999;
     font-weight: 300;
     font-style: italic;
+    margin-top: 2px;
 }
 
 .Noun,
