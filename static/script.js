@@ -14,13 +14,17 @@ let display = {
     author: true
 }
 
+const processChange = debounce((e) => query(e.target.value), 200);
+
 // À chaque recherche
-i.addEventListener('input', (e) => {
-    let query = e.target.value;
+i.addEventListener('input', processChange);
+
+//
+function query(query) {
     if (query.length > 10) {
         l.innerHTML = `<div class="word"><span>Trop de caractères dans la recherche</span></div>`
     } else if (query.length > 1) {
-        fetch(`${window.location.protocol}//` + location.hostname + '/api/' + encodeURIComponent(e.target.value))
+        fetch(`${window.location.protocol}//` + location.hostname + '/api/' + encodeURIComponent(query))
             .then((res) => res.json())
             .then((data) => {
                 l.innerHTML = '';
@@ -49,7 +53,16 @@ i.addEventListener('input', (e) => {
                 l.scrollTop = 0;
             });
     }
-});
+}
+
+// Debounce function
+function debounce(func, timeout) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+}
 
 // Affiche simplement le nature grammaticale
 function partOfSpeechSimpler(pos) {
