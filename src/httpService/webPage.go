@@ -3,11 +3,18 @@ package httpService
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"os/exec"
 	"runtime"
 )
 
 func ServeWebApp() {
+	// Setup du port dans env pour Heroku
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "9000"
+	}
+
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fs)
 	fmt.Println("App served on port", AppPort)
