@@ -20,7 +20,7 @@ i.addEventListener('input', (e) => {
     if (query.length > 10) {
         l.innerHTML = `<div class="word"><span>Trop de caractères dans la recherche</span></div>`
     } else if (query.length > 1) {
-        fetch('http://' + location.hostname + ':3001/api/' + encodeURIComponent(e.target.value))
+        fetch('http://' + location.hostname + '/api/' + encodeURIComponent(e.target.value))
             .then((res) => res.json())
             .then((data) => {
                 l.innerHTML = '';
