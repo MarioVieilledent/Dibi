@@ -1,8 +1,8 @@
 # Dibi
 
+![GitHub language count](https://img.shields.io/github/languages/count/MarioVieilledent/Dibi)
 ![GitHub top language](https://img.shields.io/github/languages/top/MarioVieilledent/Dibi)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/MarioVieilledent/Dibi)
-![GitHub repo size](https://img.shields.io/github/repo-size/MarioVieilledent/Dibi)
 
 A go app for multiple use about Dibi language.
 
