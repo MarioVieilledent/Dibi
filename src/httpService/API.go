@@ -2,9 +2,11 @@ package httpService
 
 import (
 	"Dibi/src/dict"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,7 +14,7 @@ func LaunchAPI() {
 
 	gin.SetMode(gin.ReleaseMode)
 
-	router := gin.Default()
+	router := gin.New()
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},
@@ -22,10 +24,12 @@ func LaunchAPI() {
 		AllowCredentials: true,
 	}))
 
+	router.Use(static.Serve("/", static.LocalFile("static", false)))
 	router.GET("/api", getDictionary)
 	router.GET("/api/:query", getListByQuery)
 
-	router.Run(Url + ":" + APIPort)
+	fmt.Println("API on" + Url + ":" + port)
+	router.Run(Url + ":" + port)
 }
 
 // All words

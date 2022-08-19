@@ -9,9 +9,6 @@ func main() {
 	// Récupération du dictionnaire
 	go dict.GetDict()
 
-	// Lancement de l'API
-	go httpService.LaunchAPI()
-
-	// Service statique de la page web
-	httpService.ServeWebApp()
+	// Lancement de l'API et de la page web
+	httpService.LaunchAPI()
 }
