@@ -6,25 +6,17 @@
 
 A go app for multiple use about Dibi language.
 
-## Deploy
-
-This app needs to be be compiled with Go. [Download Go](https://go.dev/dl/).
-
-> `go build`
+[The code is deployed and host on heroku](https://pilk.herokuapp.com/).
 
 ## Features
 
 Provides an algorithm to sort the dictionary and return most relevant results based on a string query.
 
 ### API
-An API is served by default on `127.0.0.1:3001`
-
 - `GET` | `/api` | Get all words (similar to [dibi-dictionary](https://dibi-dictionary.herokuapp.com/dictionary/getWords/all))
 - `GET` | `/api/:query` | Get all words matching the query
 
 ### Web app
-A native web app is served on `127.0.0.1:3000`
-
 The app is a graphic interface for the API.
 
 ## Resources

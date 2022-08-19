@@ -23,13 +23,13 @@ func GetMatchingList(query string, listSize int) []DibiWord {
 	}
 }
 
-func (dw DibiWord) calculateScore(query string) float64 {
+func (dw DibiWord) calculateScore(query string) int {
 	if dw.Dibi == query {
-		return 1.0
+		return 1
 	} else if dw.Dibi == "" || query == "" {
-		return 0.0
+		return 0
 	} else {
-		score := 0.0
+		score := 0
 		score += stringsScore(dw.Dibi, query)
 		score += stringsScore(dw.French, query)
 		score += stringsScore(dw.English, query)
@@ -37,19 +37,19 @@ func (dw DibiWord) calculateScore(query string) float64 {
 	}
 }
 
-func stringsScore(a string, b string) (score float64) {
-	score = 0.0
+func stringsScore(a string, b string) (score int) {
+	score = 0
 	a = strings.ToLower(a)
 	b = strings.ToLower(b)
 	if a == b {
-		score += 1.0
+		score += 1
 	} else {
 		for i := 0; i < len(a)+1; i++ {
 			for j := i + 2; j < len(a)+1; j++ {
 				for k := 0; k < len(b)+1; k++ {
 					for l := k + 2; l < len(b)+1; l++ {
 						if a[i:j] == b[k:l] {
-							score += 0.001 * math.Pow(float64(len(a[i:j])), 3)
+							score += int(1 * math.Pow(float64(len(a[i:j])), 2))
 						}
 					}
 				}
