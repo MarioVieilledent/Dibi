@@ -4,7 +4,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/MarioVieilledent/Dibi)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/MarioVieilledent/Dibi)
 
-A go app for multiple use about Dibi language.
+Super light Dibi Dictionary for web browsers.
 
 [The code is deployed and host on heroku](https://pilk.herokuapp.com/).
 
