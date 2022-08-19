@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 12px;
-    background-color: #444;
+    background-color: #333;
 }
 
 #input {
@@ -29,7 +29,7 @@ body {
     height: 50px;
     padding: 12px;
     font-size: 16px;
-    background-color: #666;
+    background-color: #555;
     color: white;
     border: none;
     border-left: 3px solid #ccc;
@@ -37,7 +37,7 @@ body {
 
 #input:focus {
     outline: none;
-    background-color: #777;
+    background-color: #666;
 }
 
 #list {
@@ -54,7 +54,7 @@ body {
     flex-direction: column;
     padding: 1px 0px 1px 6px;
     margin: 3px 0px;
-    background-color: #555;
+    background-color: #444;
 }
 
 .word > .dibi {
@@ -184,6 +184,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #222;
     border-radius: 6px;
 }

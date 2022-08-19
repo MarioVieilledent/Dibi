@@ -46,6 +46,7 @@ i.addEventListener('input', (e) => {
                     </div>`: ''}
                     </div>`
                 });
+                l.scrollTop = 0;
             });
     }
 });
@@ -54,15 +55,15 @@ i.addEventListener('input', (e) => {
 function partOfSpeechSimpler(pos) {
     switch (pos) {
         case 'Noun': return 'n.';
-        case 'Pronoun': return 'p.';
+        case 'Pronoun': return 'pron.';
         case 'Verb': return 'v.';
         case 'Adjective': return 'adj.';
         case 'Adverb': return 'adv.';
         case 'Conjonction': return 'conj.';
-        case 'FunctionParticule': return 'p. f.';
-        case 'TransformationParticule': return 'p. t.';
-        case 'SpiritWord': return 'm. e.';
-        case 'Interjection': return 'i.';
+        case 'FunctionParticule': return 'fonc.';
+        case 'TransformationParticule': return 'trans.';
+        case 'SpiritWord': return 'esp.';
+        case 'Interjection': return 'intej.';
         default: return `Erreur : ${pos}`
     }
 }
