@@ -12,16 +12,16 @@ func ServeWebApp() {
 	// Setup du port dans env pour Heroku
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "9000"
+		port = AppPort
 	}
 
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fs)
-	fmt.Println("App served on port", AppPort)
+	fmt.Println("App served on port", port)
 
 	// openBrowser("http://" + Url + ":" + Port)
 
-	err := http.ListenAndServe(":"+AppPort, nil)
+	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
 		fmt.Println("Error serving static files")
 	}
