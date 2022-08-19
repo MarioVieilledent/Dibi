@@ -28,7 +28,7 @@ func LaunchAPI() {
 	router.GET("/api", getDictionary)
 	router.GET("/api/:query", getListByQuery)
 
-	fmt.Println("API on" + Url + ":" + port)
+	fmt.Println("API on " + Url + ":" + port)
 	router.Run(Url + ":" + port)
 }
 
