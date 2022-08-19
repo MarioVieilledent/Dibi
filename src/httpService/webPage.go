@@ -10,11 +10,11 @@ import (
 func ServeWebApp() {
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fs)
-	fmt.Println("Application served on port", ApplicationPort)
+	fmt.Println("App served on port", AppPort)
 
 	// openBrowser("http://" + Url + ":" + Port)
 
-	err := http.ListenAndServe(":"+ApplicationPort, nil)
+	err := http.ListenAndServe(":"+AppPort, nil)
 	if err != nil {
 		fmt.Println("Error serving static files")
 	}

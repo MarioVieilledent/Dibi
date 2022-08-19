@@ -4,7 +4,7 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/MarioVieilledent/Dibi)
 ![GitHub repo size](https://img.shields.io/github/repo-size/MarioVieilledent/Dibi)
 
-A go application for multiple use about Dibi language.
+A go app for multiple use about Dibi language.
 
 ## Deploy
 
@@ -22,10 +22,10 @@ An API is served by default on `127.0.0.1:3001`
 - `GET` | `/api` | Get all words (similar to [dibi-dictionary](https://dibi-dictionary.herokuapp.com/dictionary/getWords/all))
 - `GET` | `/api/:query` | Get all words matching the query
 
-### Web application
-A native web application is served on `127.0.0.1:3000`
+### Web app
+A native web app is served on `127.0.0.1:3000`
 
-The application is a graphic interface for the API.
+The app is a graphic interface for the API.
 
 ## Resources
 

@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 12px;
+    background-color: #444;
 }
 
 #input {
@@ -28,7 +29,15 @@ body {
     height: 50px;
     padding: 12px;
     font-size: 16px;
-    border: 1px solid black;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-left: 3px solid #ccc;
+}
+
+#input:focus {
+    outline: none;
+    background-color: #777;
 }
 
 #list {
@@ -37,5 +46,144 @@ body {
     width: 100%;
     height: calc(100% - 50px);
     margin-top: 12px;
-    border: 1px solid black;
+    overflow: auto;
+}
+
+.word {
+    display: flex;
+    flex-direction: column;
+    padding: 1px 0px 1px 6px;
+    margin: 3px 0px;
+    background-color: #555;
+}
+
+.word > .dibi {
+    display: flex;
+    align-items: center;
+}
+
+.word > .dibi > .dibiWord {
+    font-size: 17px;
+}
+
+.word > .dibi > .partOfSpeech {
+    font-size: 15px;
+    font-weight: 300;
+    color: #aaa;
+    margin-left: 6px;
+}
+
+.word > .french > span {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.word > .english > span {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.word > .description > span {
+    font-size: 13px;
+    color: #bbb;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.word > .author > span {
+    font-size: 13px;
+    color: #bbb;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.Noun,
+.Pronoun,
+.Verb,
+.Adjective,
+.Adverb,
+.Conjonction,
+.FunctionParticule,
+.TransformationParticule,
+.SpiritWord,
+.Interjection {
+    font-weight: 600;
+}
+
+.Noun {
+    color: #8ae;
+}
+.Pronoun {
+    color: #8ee;
+}
+.Verb {
+    color: #e88;
+}
+.Adjective {
+    color: #8e8;
+}
+.Adverb {
+    color: #ea8;
+}
+.Conjonction {
+    color: #e8e;
+}
+.FunctionParticule {
+    color: #ee8;
+}
+.TransformationParticule {
+    color: #ee8;
+}
+.SpiritWord {
+    color: #2b6;
+}
+.Interjection {
+    color: #b8e;
+}
+
+#list > .Noun {
+    border-left: 3px solid #8ae;
+}
+#list > .Pronoun {
+    border-left: 3px solid #8ee;
+}
+#list > .Verb {
+    border-left: 3px solid #e88;
+}
+#list > .Adjective {
+    border-left: 3px solid #8e8;
+}
+#list > .Adverb {
+    border-left: 3px solid #ea8;
+}
+#list > .Conjonction {
+    border-left: 3px solid #e8e;
+}
+#list > .FunctionParticule {
+    border-left: 3px solid #ee8;
+}
+#list > .TransformationParticule {
+    border-left: 3px solid #ee8;
+}
+#list > .SpiritWord {
+    border-left: 3px solid #2b6;
+}
+#list > .Interjection {
+    border-left: 3px solid #b8e;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
 }

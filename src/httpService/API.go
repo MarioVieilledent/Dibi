@@ -9,7 +9,10 @@ import (
 )
 
 func LaunchAPI() {
-	router := gin.Default()
+
+	gin.SetMode(gin.ReleaseMode)
+
+	router := gin.New()
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},

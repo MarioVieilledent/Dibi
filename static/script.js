@@ -1,8 +1,20 @@
-
+// Elements du dom
 const i = document.getElementById('input');
-
 const l = document.getElementById('list');
 
+// Autofocus sur barre de recherche
+setTimeout(() => {
+    i.focus()
+}, 10);
+
+
+// Options d'affichage
+let display = {
+    english: false,
+    author: true
+}
+
+// À chaque recherche
 i.addEventListener('input', (e) => {
     let query = e.target.value;
     if (query.length > 10) {
@@ -13,8 +25,44 @@ i.addEventListener('input', (e) => {
             .then((data) => {
                 l.innerHTML = '';
                 data.forEach(e => {
-                    l.innerHTML += `<div class="word"><span>${e.dibi}</span> - <span>${e.french}</span> - <span>${e.english}</span></div>`
+                    l.innerHTML += `<div class="word ${e.partOfSpeech}">
+                    <div class="dibi ${e.partOfSpeech}">
+                        <span class="dibiWord">${e.dibi}</span>
+                        <span class="partOfSpeech">${partOfSpeechSimpler(e.partOfSpeech)}</span>
+                    </div>
+                    <div class="french">
+                        <span>${e.french}</span>
+                    </div>
+                    ${display.english ? `
+                        <div class="english">
+                        <span>${e.english}</span>
+                    </div>`: ''}
+                    <div class="description">
+                        <span>${e.description}</span>
+                    </div>
+                    ${display.author ? `
+                        <div class="author">
+                        <span>${e.author}</span>
+                    </div>`: ''}
+                    </div>`
                 });
             });
     }
 });
+
+// Affiche simplement le nature grammaticale
+function partOfSpeechSimpler(pos) {
+    switch (pos) {
+        case 'Noun': return 'n.';
+        case 'Pronoun': return 'p.';
+        case 'Verb': return 'v.';
+        case 'Adjective': return 'adj.';
+        case 'Adverb': return 'adv.';
+        case 'Conjonction': return 'conj.';
+        case 'FunctionParticule': return 'p. f.';
+        case 'TransformationParticule': return 'p. t.';
+        case 'SpiritWord': return 'm. e.';
+        case 'Interjection': return 'i.';
+        default: return `Erreur : ${pos}`
+    }
+}
