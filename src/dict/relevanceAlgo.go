@@ -33,6 +33,7 @@ func (dw DibiWord) calculateScore(query string) int {
 		score += stringsScore(dw.Dibi, query)
 		score += stringsScore(dw.French, query)
 		score += stringsScore(dw.English, query)
+
 		return score
 	}
 }
@@ -42,7 +43,7 @@ func stringsScore(a string, b string) (score int) {
 	a = strings.ToLower(a)
 	b = strings.ToLower(b)
 	if a == b {
-		score += 1
+		score += 1000
 	} else {
 		for i := 0; i < len(a)+1; i++ {
 			for j := i + 2; j < len(a)+1; j++ {
